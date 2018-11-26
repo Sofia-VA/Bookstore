@@ -1,14 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  
+  <ion-toolbar>
+    <ion-title style="background-image:url('https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&h=350')">
+      <h2 style="color:white">Libros Favoritos</h2>
     </ion-title>
-  </ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="clickA()" style="background-color:black">
+          <ion-icon name="add" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=31b0b078f5da0a750f05e27c6d9df39b&w=1000&q=80')">
+  <ion-card *ngFor="let c of libros" style="background-image:url('https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&h=350')">
+      <ion-card-content>
+        <ion-item style="background-image:url('https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&h=350')">
+          <ion-avatar item-start> <img [src]=c.portada> </ion-avatar>
+          <h2 style="color:white"(click)="clickC(c)">{{c.titulo}}</h2>
+          <p style="color:white">{{c.autor}}</p>
+        </ion-item>
+      </ion-card-content>
+      </ion-card>
 </ion-content>
